@@ -18,7 +18,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body id="page-wrap" <?php body_class(); ?>>
 	<!-- Google Tag Manager (noscript) -->
 
 	<!-- End Google Tag Manager (noscript) -->

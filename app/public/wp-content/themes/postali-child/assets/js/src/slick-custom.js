@@ -11,10 +11,38 @@
 jQuery( function ( $ ) {
 	"use strict";
 
-	$('#slider').slick({
+	// $('#awards-slider').slick({
+	// 	dots: false,
+	// 	infinite: true,
+	// 	fade: true,
+	// 	autoplay: true,
+  	// 	autoplaySpeed: 5000,
+  	// 	speed: 1300,
+	// 	slidesToShow: 3,
+	// 	slidesToScroll: 1,
+	// 	prevArrow: false,
+    // 	nextArrow: false,
+    // 	swipeToSlide: true,
+	// 	cssEase: 'ease-in-out'
+	// });
+
+	$('#awards-slider').slick({
 		dots: false,
 		infinite: true,
-		fade: true,
+		autoplay: true,
+  		autoplaySpeed: 5000,
+  		speed: 1300,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		prevArrow: false,
+    	nextArrow: false,
+    	swipeToSlide: false,
+		cssEase: 'ease-in-out'
+	});
+
+	$('.results-container').slick({
+		dots: false,
+		infinite: true,
 		autoplay: true,
   		autoplaySpeed: 5000,
   		speed: 1300,
@@ -22,7 +50,7 @@ jQuery( function ( $ ) {
 		slidesToScroll: 1,
 		prevArrow: false,
     	nextArrow: false,
-    	swipeToSlide: true,
+    	swipeToSlide: false,
 		cssEase: 'ease-in-out'
 	});
 	

@@ -34,7 +34,7 @@ function create_custom_post_type_results() {
         'supports' => array( 'title', 'editor', 'excerpt' ),  
         'exclude_from_search' => false,
         'capability_type' => 'post',
-        'rewrite' => array( 'slug' => 'case-results', 'with_front' => false ), // Allows for /legal-blog/ to be the preface to non pages, but custom posts to have own root
+        'rewrite' => array( 'slug' => 'results', 'with_front' => false ), // Allows for /legal-blog/ to be the preface to non pages, but custom posts to have own root
         )
     );
 

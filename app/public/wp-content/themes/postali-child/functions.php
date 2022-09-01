@@ -5,12 +5,21 @@
  * @package Postali Child
  * @author Postali LLC
  */
+
+	// Global ACF Options
+	$default_phone_number = get_field('default_phone_number', 'options');
+	$settlement_badge_group = get_field('settlement_badge', 'options');
+	$settlement_badge = $settlement_badge_group['badge'];
+	$number_verdicts = $settlement_badge_group['number_of_settlements'];
+	
+	
 	require_once dirname( __FILE__ ) . '/includes/admin.php';
 	require_once dirname( __FILE__ ) . '/includes/utility.php';
 	require_once dirname( __FILE__ ) . '/includes/case-results-cpt.php'; // Custom Post Type Case Results
 	require_once dirname( __FILE__ ) . '/includes/testimonials-cpt.php'; // Custom Post Type Testimonials
-    //require_once dirname( __FILE__ ) . '/includes/media-mentions-cpt.php'; // Custom Post Type Media Mentions
-	//require_once dirname( __FILE__ ) . '/includes/attorneys-cpt.php'; // Custom Post Type Attorneys
+    require_once dirname( __FILE__ ) . '/includes/attorneys-cpt.php'; // Custom Post Type Attorneys
+	//require_once dirname( __FILE__ ) . '/includes/media-mentions-cpt.php'; // Custom Post Type Media Mentions
+	
 	//require_once dirname( __FILE__ ) . '/includes/social-share.php'; // Social Media Sharing
 
 
@@ -25,7 +34,7 @@
 
 		wp_enqueue_style( 'child-styles', get_stylesheet_directory_uri() . '/style.css' ); // Enqueue Child theme style sheet (theme info)
 		wp_enqueue_style( 'styles', get_stylesheet_directory_uri() . '/assets/css/styles.css'); // Enqueue child theme styles.css
-		//wp_enqueue_style( 'slick-css', get_stylesheet_directory_uri() . '/assets/css/slick.css'); // Enqueue child theme styles.css
+		wp_enqueue_style( 'slick-css', get_stylesheet_directory_uri() . '/assets/css/slick.css'); // Enqueue child theme styles.css
 		
 		wp_register_style( 'google-fonts', '', array() );
 		wp_enqueue_style('google-fonts');
@@ -33,6 +42,12 @@
 		// Compiled .js using Grunt.js
 		wp_register_script('custom-scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.min.js',array('jquery'), null, true); 
 		wp_enqueue_script('custom-scripts');
+
+		wp_register_script('slick-slider', get_stylesheet_directory_uri() . '/assets/js/slick.min.js',array('jquery'), null, true); 
+		wp_enqueue_script('slick-slider');
+
+		wp_register_script('slick-custom', get_stylesheet_directory_uri() . '/assets/js/slick-custom.min.js',array('jquery'), null, true); 
+		wp_enqueue_script('slick-custom');
 
 		if ( is_page_template( 'front-page.php' ) ) {
 
@@ -96,11 +111,11 @@
 		));
 
 		acf_add_options_page(array(
-			'page_title'    => 'Customizations',
-			'menu_title'    => 'Customizations',
-			'menu_slug'     => 'customizations',
+			'page_title'    => 'Global Theme Settings',
+			'menu_title'    => 'Global Theme Settings',
+			'menu_slug'     => 'Global Theme Settings',
 			'capability'    => 'edit_posts',
-			'icon_url'      => 'dashicons-admin-customizer', // Add this line and replace the second inverted commas with class of the icon you like
+			'icon_url'      => 'dashicons-admin-site', // Add this line and replace the second inverted commas with class of the icon you like
 			'redirect'      => false
 		));
 
@@ -271,5 +286,12 @@
 		}
 	}
 	add_action( 'manage_pages_custom_column', 'page_custom_column_views', 5, 2 );
+
+	function readable_phone_numb( $number ) {
+		if(  preg_match( '/^(\d{3})(\d{3})(\d{4})$/', $number,  $matches ) ) {
+			// $readable_phone = '(' .  $matches[1] . ') ' .$matches[2] . '-' . $matches[3];
+			return '(' .  $matches[1] . ') ' .$matches[2] . '-' . $matches[3];
+		}
+	}
 
 ?>

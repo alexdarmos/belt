@@ -1,0 +1,28 @@
+// Case Results Block
+#case-results-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1em;
+    background: none;
+    padding: 0;
+    .left-block {
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .right-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $white;
+        .vertical-text {
+            transform: rotate(-90deg);
+            height: 40px;
+        }
+        .results-container {
+            width: 300px;
+        }
+    }
+    
+}

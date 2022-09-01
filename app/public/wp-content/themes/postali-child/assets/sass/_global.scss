@@ -16,6 +16,28 @@ tbody, tfoot, thead, tr, th, td {
 	border: 0;
 }
 
+#page-wrap {
+	margin: 0 1em;
+}
+
+.settlement-badge {
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: contain;
+    display: flex;
+    justify-content: center;
+	height: 200px;
+	width: 200px;
+	.settlement-number {
+		position: absolute;
+		top: 40px;
+	}
+}
+
+body {
+	background: $lt-grey;
+}
+
 html, body {
 	font-size: 18px;
 	line-height: 1;
@@ -61,10 +83,6 @@ table {
 a img {
 	border: none;
 }
- 
-body {
-	background:$white;
-}
 
 .container {
     max-width:$screen-xl;
@@ -92,6 +110,8 @@ body {
 
 section {
     padding: 80px 0;
+	margin-bottom: 30px;
+	background: $white;
     @media screen and (max-width: $screen-sm) {
         padding: 60px 0;
     }
@@ -141,6 +161,12 @@ section {
     .column-33 {
 		width:30%;
     }
+	.column-40 {
+		width:37%;
+	}
+	.column-60 {
+		width: 57%;
+	}
     .column-66 {
 		width:63%;
     }
@@ -152,7 +178,9 @@ section {
 		justify-content: space-between;
 	}
 	.column-25,
+	.column-40,
     .column-50,
+	.column-60,
     .column-75,
     .column-full,
     .column-33,
