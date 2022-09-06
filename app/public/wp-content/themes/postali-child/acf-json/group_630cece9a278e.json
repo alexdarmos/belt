@@ -161,123 +161,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_630ceee812a41",
-            "label": "Title",
-            "name": "p2_title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_630ceef212a42",
-            "label": "Sub-Title",
-            "name": "p2_sub_title",
-            "type": "text",
-            "instructions": "Appears above title.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_630cef5612a46",
-            "label": "Copy",
-            "name": "p2_copy",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_630cef0612a43",
-            "label": "Read More Link",
-            "name": "p2_read_more_link",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_630cef3d12a44",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_630cef4212a45",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "page_link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": "",
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "allow_archives": 1,
-                    "multiple": 0
-                }
-            ]
-        },
-        {
             "key": "field_630cee6712a3f",
             "label": "Reviews",
             "name": "p2_reviews",
             "type": "repeater",
-            "instructions": "Leave empty to default to most recent reviews.",
+            "instructions": "Reviews Block copy can be updated in Global Theme Settings. Add hand-selected reviews here to overwrite the default setting (default setting will pull in the most recent reviews).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -334,5 +222,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661792439
+    "modified": 1662480731
 }

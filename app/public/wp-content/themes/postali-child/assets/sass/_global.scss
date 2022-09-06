@@ -191,6 +191,9 @@ section {
 		&.center {
 			margin:0 auto;
 		}
+		&.single-col {
+			flex-direction: column;
+		}
 	}
 }
 
@@ -199,6 +202,7 @@ section {
 .spacer-break,
 .spacer-15,
 .spacer-30,
+.spacer-45,
 .spacer-60,
 .spacer-90 {
     display:block;
@@ -212,6 +216,7 @@ section {
 .spacer-break { height:1px; }
 .spacer-15 { height:15px; }
 .spacer-30 { height:30px; }
+.spacer-45 { height:45px; }
 .spacer-60 { height:60px; }
 .spacer-90 { height:90px; }
 
@@ -345,4 +350,36 @@ section {
 			margin-left: 5px;
 		}
 	}
+}
+
+// Global Classes
+.vertical-text {
+	transform: rotate(-90deg);
+	height: 40px;
+}
+
+.banner-img {
+	height: 100%;
+	object-fit: cover;
+	min-width: 400px;
+}
+
+.grid {
+	display: grid;
+	&_1-3 {
+		grid-template-columns: 1fr 3fr;
+	}
+	&_3-1 {
+		grid-template-columns: 3fr 1fr;
+	}
+	// &_reverse {
+	// 	& > *:first-child {
+	// 		order: 2;
+	// 	}
+	// }
+}
+
+
+#breadcrumbs {
+	padding: 0 0 75px 0;
 }

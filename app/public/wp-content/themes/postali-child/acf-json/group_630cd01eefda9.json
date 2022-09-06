@@ -111,6 +111,30 @@
             "delay": 0
         },
         {
+            "key": "field_6310efccbbe98",
+            "label": "Bio Headshot",
+            "name": "hero_bio_headshot",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_630cd0cea6018",
             "label": "Panel 1",
             "name": "",
@@ -293,7 +317,7 @@
                     "label": "Enable Two Column",
                     "name": "enable_two_column",
                     "type": "true_false",
-                    "instructions": "Check this box to display the accordion as two columns on laptop\/desktop screens.",
+                    "instructions": "If there are more than 5 accordions, check this box to display as two columns on laptop\/desktop screens.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -391,5 +415,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661785464
+    "modified": 1662056341
 }

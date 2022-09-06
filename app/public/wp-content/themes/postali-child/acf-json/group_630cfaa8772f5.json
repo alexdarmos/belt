@@ -38,10 +38,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_630cfaf1205fc",
-            "label": "Testimonial",
-            "name": "testimonial",
-            "type": "wysiwyg",
+            "key": "field_6317a9b6e8909",
+            "label": "Practice Area",
+            "name": "practice_area",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -51,10 +51,29 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_630cfaf1205fc",
+            "label": "Testimonial",
+            "name": "testimonial",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_630cfafc205fd",
@@ -117,5 +136,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661801093
+    "modified": 1662495168
 }

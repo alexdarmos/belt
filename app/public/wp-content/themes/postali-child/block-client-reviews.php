@@ -44,7 +44,8 @@ function build_reivews($id, $count) {
         <div class="columns">
             <div class="column-40">
                 <div>
-                    <span><p class="small-sub-title"><?php esc_html_e($reviews_block['title']); ?></p><span class="star-rating">★ ★ ★ ★ ★</span></span>
+                    <span> <span class="small-sub-title"><?php esc_html_e($reviews_block['sub_title']); ?></span> <span class="star-rating">★ ★ ★ ★ ★</span> </span>
+                    <h2><?php esc_html_e($reviews_block['title']); ?></h2>
                     <div class="spacer-30"></div>
                     <?php echo $reviews_block['copy'] ?>
                     <a href="<?php esc_html_e($reviews_block['read_more_link']['link']); ?>" class="btn"><?php esc_html_e($reviews_block['read_more_link']['title']); ?></a>
@@ -65,6 +66,7 @@ function build_reivews($id, $count) {
                         }
                     }
                 } ?>
+                <?php wp_reset_postdata(); ?>
             </div>
         </div>
     </div>

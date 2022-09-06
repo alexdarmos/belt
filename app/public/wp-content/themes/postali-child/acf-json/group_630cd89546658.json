@@ -76,6 +76,31 @@
             "new_lines": ""
         },
         {
+            "key": "field_631259b94a82f",
+            "label": "Category",
+            "name": "pa_category",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "general": "General",
+                "criminal-defense": "Criminal Defense",
+                "personal-injury": "Personal Injury"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "general",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_630cd8e393849",
             "label": "Hero",
             "name": "",
@@ -138,7 +163,7 @@
             "key": "field_630cd8f69384b",
             "label": "Copy",
             "name": "hero_copy",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -149,9 +174,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_630cd9d69384c",
@@ -298,6 +323,25 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_631755fdb556d",
+                            "label": "Sub-TItle",
+                            "name": "sub_title",
+                            "type": "text",
+                            "instructions": "Appears above title.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_630ce75093854",
                             "label": "Copy",
                             "name": "copy",
@@ -414,6 +458,25 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_63175617b556e",
+                            "label": "Sub-Title",
+                            "name": "sub_title",
+                            "type": "text",
+                            "instructions": "Appears above title.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_630ce7e29385a",
                             "label": "Copy",
                             "name": "copy",
@@ -458,123 +521,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_630cefe35ea66",
-            "label": "Title",
-            "name": "p4_title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_630cefec5ea67",
-            "label": "Sub-Title",
-            "name": "p4_sub_title",
-            "type": "text",
-            "instructions": "Appears above title.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_630ceffe5ea68",
-            "label": "Copy",
-            "name": "p4_copy",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_630cf00a5ea69",
-            "label": "Read More Link",
-            "name": "p4_read_more_link",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_630cf0135ea6a",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_630cf0225ea6b",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "page_link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": "",
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "allow_archives": 1,
-                    "multiple": 0
-                }
-            ]
-        },
-        {
             "key": "field_630ce8209385c",
             "label": "Reviews",
             "name": "p4_reviews",
             "type": "repeater",
-            "instructions": "Leave empty to default to most recent reviews.",
+            "instructions": "Reviews Block copy can be updated in Global Theme Settings. Add hand-selected reviews here to overwrite the default setting (default setting will pull in the most recent reviews).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -654,6 +605,25 @@
                             "name": "title",
                             "type": "text",
                             "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_63175635b556f",
+                            "label": "Sub-Title",
+                            "name": "sub_title",
+                            "type": "text",
+                            "instructions": "Appears above title.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -784,6 +754,25 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_63175645b5570",
+                            "label": "Sub-Title",
+                            "name": "sub_title",
+                            "type": "text",
+                            "instructions": "Appears above title.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_630cea6813873",
                             "label": "Copy",
                             "name": "copy",
@@ -832,5 +821,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661972604
+    "modified": 1662480770
 }

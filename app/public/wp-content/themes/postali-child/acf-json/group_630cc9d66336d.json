@@ -41,7 +41,7 @@
             "key": "field_630ccc2161956",
             "label": "Copy",
             "name": "hero_copy",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -52,9 +52,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_630ccc3061957",
@@ -101,7 +101,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
+                    "default_value": "Contact Us Today",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
@@ -201,6 +201,44 @@
             "message": "Awards can be updated in Global Theme Settings.",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_63110df903055",
+            "label": "Title",
+            "name": "p1_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_63110e0103056",
+            "label": "Sub-Title",
+            "name": "p1_sub_title",
+            "type": "text",
+            "instructions": "Appears above title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_630ccd036195f",
@@ -426,5 +464,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661783863
+    "modified": 1662132208
 }

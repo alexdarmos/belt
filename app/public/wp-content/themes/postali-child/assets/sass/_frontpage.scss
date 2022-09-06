@@ -10,4 +10,10 @@
         background: $dk-grey;
         margin-bottom: 0;
     }
+    
+    #panel-4 {
+        @include practice-areas-block();
+    }
 }
+
+

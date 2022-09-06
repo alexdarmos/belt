@@ -95,5 +95,14 @@ jQuery( function ( $ ) {
 			});
 		}
 	});
+	$( document ).ready( function() {
+		console.log('ready!');
+		$('.practice-area').on('mouseover', function() {
+			
+			var backgroundImage = $(this).find('.pa-image').attr('bg-data');
+			console.log(backgroundImage)
+			$('.parallax-bg').css('background-image', `url('${backgroundImage}')`);
+		});
+	});
 
 });

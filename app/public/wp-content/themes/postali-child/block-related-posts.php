@@ -1,47 +1,72 @@
-<!-- Related Posts Block --> 
-<?php $categories = get_the_category();
-$category_id = $categories[0]->cat_ID; ?>
+<?php /* Block: Related Posts */ ?>
 
-<?php $args = array( 
-    'posts_per_page' => 3, 
-    'category' => $category_id,
-    'post__not_in' => array( $post->ID )
-);
+<?php 
 
-$relatedposts = get_posts( $args );
-$count = count($relatedposts); 
-?>
+$all_categories = get_the_category($post->ID); 
+$primary_category = '';
+$count = 0;
+foreach($all_categories as $category) {
+    if( $count < 1 ) {
+        $primary_category = $category->name;
+    }
+    $count++;
+}
+$custom_posts = get_field($args['data']);
+$query_args = [
+    'post_type'         => 'post',
+    'post_status'       => 'publish',
+    'orderby' => 'publish_date',
+    'order' => 'DESC',
+    'posts_per_page'    => 3,
+    'post__not_in'      => array( $post->ID ),
+    'category_name'     => $primary_category
 
-<?php if ($count >= 1) { ?>
+];
+$related_posts_query = new WP_Query($query_args);
 
-<section class="related-posts">
-    <?php if( is_single() ) : ?>
-        <h2 class="center-border">Related Readings</h2>
-    <?php else : ?>
-        <h2 class="center-border">News & Updates</h2>
-    <?php endif; ?>
+function related_post($id) {
+    $date = get_the_date('M d, Y', $id);
+    $title = get_field('hero_title', $id) ? get_field('hero_title', $id) : get_the_title($id);
+    $excerpt = get_field('global_excerpt', $id);
+    $categories = get_the_category($id);
+    $category_string = '';
+    $link = get_the_permalink($id);
+    $cat_count = 0;
+    $cat_length = count($categories);
+    foreach($categories as $category) {
+        $cat_count++;
+        $category_string .= "<a href='/{$category->taxonomy}/{$category->slug}/'>{$category->name}</a>" . ($cat_count < $cat_length ? ', ' : '');
+    }
 
-    
-    
-    <div class="columns">
-        <div class="card-holder card-slider">
-            <?php                 
-            $relatedposts = get_posts( $args );
-            foreach ( $relatedposts as $post ) : setup_postdata( $post ); 
-            foreach (get_the_category() as $cat) { $category = $cat->name; }?>
-                <div class="post-container card <?php if( !is_single() ) : ?> link-hunter <?php endif; ?>">
-                    <p><?php echo the_date('F d, Y'); ?></p>
-                    <p class="blog-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
-                    <!-- elements for blog posts only -->
-                    <?php if( is_single() ) : ?>
-                        <p class="category"><strong>Category: </strong><?php echo $category; ?></p>
-                        <a href="<?php the_permalink(); ?>" class="btn" title="<?php the_title_attribute(); ?>">Read Article</a>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; 
-            wp_reset_postdata();?>
+    $review_block =
+    "<div class='single-card border-left'>
+        <span><span class='date'>{$date}</span><span class='categories'>{$category_string}</span></span>
+        <a href='{$link}'><p class='wide-text'>{$title}</p></a>
+        <div class='spacer-15'></div>
+        <p>{$excerpt}</p>
+        
+    </div>";
+    return $review_block;
+} ?>
+
+<section id="related-posts-block">
+    <div class="container triple-card-container">
+        
+        <div id="posts-container" class="column-60">
+            <?php if( $custom_posts ) { 
+                foreach( $custom_posts as $post) {
+                    echo related_post($post['blog_post']->ID);
+                }
+            } else {
+                if( $related_posts_query->have_posts() ) {
+                    while( $related_posts_query->have_posts() ) {
+                        $related_posts_query->the_post();
+                        echo related_post(get_the_ID());
+                    }
+                }
+            } ?>
+            <?php wp_reset_postdata(); ?>
         </div>
+        
     </div>
 </section>
-
-<?php } ?>

@@ -159,3 +159,16 @@
         grid-column-gap: 50px;
     }
 }
+
+@mixin practice-areas-block() {
+    
+}
+
+@mixin triple-card-container() {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2em;
+    .single-card {
+        
+    }
+}

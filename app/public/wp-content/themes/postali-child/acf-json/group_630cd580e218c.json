@@ -95,7 +95,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-practice-areas-landing.php"
+                "value": "page-pa-landing.php"
             }
         ]
     ],
@@ -110,5 +110,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661786224
+    "modified": 1662146465
 }

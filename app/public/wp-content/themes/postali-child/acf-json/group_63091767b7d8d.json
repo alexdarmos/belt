@@ -420,6 +420,25 @@
             "button_label": "",
             "sub_fields": [
                 {
+                    "key": "field_6310fc6041ffe",
+                    "label": "Short Title",
+                    "name": "location_short_title",
+                    "type": "text",
+                    "instructions": "Use city name only.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_63091809759be",
                     "label": "Address",
                     "name": "location_address",
@@ -580,7 +599,7 @@
         },
         {
             "key": "field_630e5528f0148",
-            "label": "Default Testimonial",
+            "label": "Default Sidebar Testimonial",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -596,7 +615,7 @@
         },
         {
             "key": "field_63091979759c5",
-            "label": "Default Testimonial",
+            "label": "Testimonial",
             "name": "default_testimonial",
             "type": "post_object",
             "instructions": "",
@@ -615,6 +634,25 @@
             "multiple": 0,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_6312510f71157",
+            "label": "Testimonial Page Link",
+            "name": "testimonial_page_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
         },
         {
             "key": "field_630cc452f14aa",
@@ -667,6 +705,25 @@
             "message": "The phone number can be updated in the Contact tab > Default Phone Number.",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_6311057e3cc97",
+            "label": "Contact Page Link",
+            "name": "contact_page_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
         },
         {
             "key": "field_630cc57bf14ae",
@@ -844,5 +901,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661884578
+    "modified": 1662144816
 }

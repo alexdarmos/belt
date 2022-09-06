@@ -633,7 +633,7 @@
                     "label": "Enable Two Columns",
                     "name": "enable_two_columns",
                     "type": "true_false",
-                    "instructions": "Check this box to display the accordion as two columns on laptop\/desktop screens.",
+                    "instructions": "If there are more than 5 accordions, check this box to display as two columns on laptop\/desktop screens.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -921,5 +921,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661884986
+    "modified": 1662056323
 }

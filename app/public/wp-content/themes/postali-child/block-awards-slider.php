@@ -9,5 +9,4 @@
         <?php $n++; ?>
     <?php endwhile; ?>
     <?php endif; ?> 
-    </div>
 </div>

@@ -3,6 +3,41 @@
     "title": "Single Post Template",
     "fields": [
         {
+            "key": "field_63177ed392f1a",
+            "label": "Global",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_63177edd92f1b",
+            "label": "Excerpt",
+            "name": "global_excerpt",
+            "type": "textarea",
+            "instructions": "LImit 1 - 2 sentences. This will appear in the Related Posts widget.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_630cf10d9e5ed",
             "label": "Hero",
             "name": "",
@@ -195,6 +230,13 @@
                 "operator": "==",
                 "value": "post"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
         ]
     ],
     "menu_order": 0,
@@ -208,5 +250,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661793314
+    "modified": 1662489500
 }

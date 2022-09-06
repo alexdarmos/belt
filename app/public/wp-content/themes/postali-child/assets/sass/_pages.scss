@@ -4,3 +4,8 @@
  * @package Postali Child
  * @author Postali LLC
 */
+
+// Dark Background
+.single-attorneys, .single-attorneys footer #copyright, .single-attorneys #hero {
+    background: $dk-grey !important;
+}
