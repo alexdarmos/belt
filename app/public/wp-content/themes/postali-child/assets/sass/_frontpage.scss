@@ -6,9 +6,113 @@
 **/
 
 #front-page {
-    #landing-hero {
+    #hero {
+        padding: 0;
         background: $dk-grey;
         margin-bottom: 0;
+        & > .columns {
+            align-items: stretch;
+            @include respond(tab-land) {
+                flex-direction: column;
+            }
+        }
+        h1, p, a {
+            color: $white;
+        }
+        a.btn {
+            color: $blk;
+        }
+        h1 {
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-family: $lato;
+            margin-bottom: 30px;
+        }
+        p.banner-text {
+            font-family: $cantata;
+            font-size: 52px;
+            line-height: normal;
+            margin-bottom: 60px;
+        }
+        .cta-wrapper {
+            margin-top: 40px;
+        }
+        .intro-video {
+            justify-content: flex-start;
+            align-items: center;
+            position: absolute;
+            bottom: 40px;
+            & > *:first-child {
+                margin-right: 10px;
+            }
+            &_desktop {
+                display: flex;
+                @include respond(tab-land) {
+                    display: none;
+                }
+            }
+            &_mobile {
+                display: none;
+                @include respond(tab-land) {
+                    display: flex;
+                }
+            }
+        }
+        .columns {
+            position: relative;
+            .column-40 {
+                margin: 0 auto;
+                padding: 80px 20px;
+                min-height: 700px;
+                @include respond(desktop) {
+                    width: 57% !important;
+                }
+                @include respond(tab-land) {
+                    width: auto !important;
+                    min-height: auto;
+                }
+            }
+            .column-60 {
+                position: relative;
+                @include respond(desktop) {
+                    width: 37% !important;
+                }
+                @include respond(tab-land) {
+                    width: auto !important;
+                    display: flex;
+                    justify-content: center;
+                }
+                .banner-img {
+                    @include respond(desktop) {
+                        min-width: auto;
+                    }
+                }
+                .settlement-badge {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    @include respond(tab-land) {
+                        bottom: 125px;
+                        top: unset;
+                        right: unset;
+                    }
+                }
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgb(59,59,59);
+                    background: linear-gradient(0deg, #3b3b3b 20%, #fff0 100%);
+                    @include respond(tab-land) {
+                        content: "";
+                    }
+                    
+                }
+            }
+        }
     }
     
     #panel-4 {

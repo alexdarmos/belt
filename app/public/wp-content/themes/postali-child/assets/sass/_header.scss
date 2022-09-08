@@ -6,21 +6,40 @@
 **/
 
 header {
+    background-color: $lt-grey !important;
     #header-top {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 25px 0 !important;
+        @include respond(tab-land) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
         #header-top_left {
             display: flex;
             width: 25%;
             justify-content: flex-start;
-            @media screen and (max-width:$screen-md) {
+            margin-right: 50px;
+            @include respond(tab-port) {
                 width: 100%;
             }
             .custom-logo-link {
-                width: 100%;
+                width: fit-content;
                 height: auto;
                 display:flex;
                 .custom-logo {
                     max-height: 74px;
                     max-width: 340px;
+                    @include respond(desktop) {
+                        width: 250px;
+                    }
+                    @include respond(tab-land) {
+                        margin-bottom: 25px;
+                    }
+                    @include respond(tab-port) {
+                        margin-bottom: 0;
+                    }
                 }
             }
         }
@@ -31,10 +50,10 @@ header {
                     display: flex;
                     padding-bottom:0 !important;
                     align-items: center;
-                    @media screen and (max-width:$screen-md) {
+                    @include respond(tab-port) {
                         padding: 0 !important;
                         top: 104px;
-                        background: $white;
+                        // background: $white;
                         height: auto;
                         position: absolute;
                         left: -20px;
@@ -45,7 +64,6 @@ header {
                     }
                     li {
                         display: flex;
-                        margin-left:5px;
                         position: relative;
                         height: auto;
                         &:first-of-type {
@@ -54,13 +72,31 @@ header {
                         .accordion-toggle {
                             display:none;
                         }
+                        &.phone-number {
+                            position: relative;
+                            &:before {
+                                content: "Free Consultations";
+                                position: absolute;
+                                top: -23px;
+                                left: 0;
+                                color: $blk;
+                                font-size: 14px;
+                                font-weight: $normal;
+                                font-family: $lato;
+                                font-style: italic;
+                            }
+                            a {
+                                padding: 0 !important;
+                                line-height: normal !important;
+                            }
+                        }
                         &:not(.menu-item-search) {
                             &.disable {
                                 opacity: 0.5;
                                 pointer-events: none;
                             }
                         }
-                        @media screen and (max-width:$screen-md) {
+                        @include respond(tab-port) {
                             display:flex;
                             margin: 0;
                             flex-wrap: wrap;
@@ -111,7 +147,7 @@ header {
                                     0% { opacity:0; top:25px; }
                                     100% { opacity:1; top:35px; }
                                 }
-                                @media screen and (max-width:$screen-md) {
+                                @include respond(tab-port) {
                                     -webkit-animation:none;
                                     animation:none;
                                 }
@@ -125,7 +161,7 @@ header {
                                     }
                                 }
                             }
-                            @media screen and (max-width:$screen-md) {
+                            @include respond(tab-port) {
                                 ul.sub-menu {
                                     display:none;
                                 }
@@ -140,11 +176,11 @@ header {
                                     right: 20px;
                                     bottom: 0;
                                     display:block !important;
-                                    @media screen and (max-width:$screen-md) {
+                                    @include respond(tab-port) {
                                         display:none !important;
                                     }
                                 }
-                                @media screen and (max-width:$screen-md) {
+                                @include respond(tab-port) {
                                     color:$blk;
                                     background:none;
                                 }
@@ -156,7 +192,7 @@ header {
                             &:hover {
                                 a {
                                     color:$blk;
-                                    @media screen and (max-width:$screen-md) {
+                                    @include respond(tab-port) {
                                         color:$blk;
                                     }
                                 }
@@ -172,10 +208,10 @@ header {
                         }
                         a {
                             color:$blk;
-                            padding:10px 16px;
+                            padding:10px 10px;
                             text-transform: none;
                             font-size: 16px;
-                            font-family: $sans;
+                            font-family: $lato;
                             font-weight:400;
                             height: 100%;
                             display: flex;
@@ -188,13 +224,13 @@ header {
                             overflow: hidden;
                             text-decoration: none !important;
                             z-index: 1;
-                            @media screen and (max-width:$screen-lg) {
-                                padding:8px !important;
+                            @include respond(desktop) {
+                                padding:8px 0 !important;
                             }
-                            @media screen and (max-width:$screen-md) {
+                            @include respond(tab-port) {
                                 padding:10px 0;
                                 font-size: 22px;
-                                font-family: $serif;
+                                font-family: $cantata;
                                 color:$blk;
                             }
                             &:hover {
@@ -218,7 +254,7 @@ header {
                                 transition-duration: 0.3s;
                                 -webkit-transition-timing-function: ease-out;
                                 transition-timing-function: ease-out;
-                                @media screen and (max-width:$screen-md) {
+                                @include respond(tab-port) {
                                     display:none;
                                 }
                             }
@@ -242,7 +278,7 @@ header {
                             margin-left: -30px;
                             width: auto;
                             top:25px;
-                            @media screen and (max-width:$screen-md) {
+                            @include respond(tab-port) {
                                 position: relative;
                                 width: 100%;
                                 background:none;
@@ -261,24 +297,23 @@ header {
                                 margin: 0;
                                 padding-bottom: 0;
                                 height:auto;
-                                @media screen and (max-width:$screen-md) {
+                                @include respond(tab-port) {
                                     padding: 0;
                                     border-bottom: none;
                                 }
                                 a {
                                     color:$blk;
-                                    font-family: $sans;
+                                    font-family: $lato;
                                     font-size: 16px;
                                     text-transform: none;
                                     letter-spacing: 0;
                                     transition:.3s ease all;
                                     padding: 10px 0;
-                                    line-height: 100%;
                                     color:$blk;
                                     &:before {
                                         display:none !important;
                                     }
-                                    @media screen and (max-width:$screen-md) {
+                                    @include respond(tab-port) {
                                         font-size:18px;
                                         padding-left:20px;
                                     }
@@ -294,7 +329,7 @@ header {
                                     a {
                                         color:$white;
                                         transition:.3s ease all;
-                                        @media screen and (max-width:$screen-md) {
+                                        @include respond(tab-port) {
                                             color:$blk;
                                         }
                                     }
@@ -305,7 +340,7 @@ header {
                             }
                         }
                     }
-                    @media screen and (max-width:$screen-md) {
+                    @include respond(tab-port) {
                         display:none;
                     }
                 }
@@ -314,7 +349,7 @@ header {
     }
     #header-top_mobile {
         display:none;
-        @media screen and (max-width:$screen-md) {
+        @include respond(tab-port) {
             display: block;
             position: absolute;
             top: 35px;
@@ -367,13 +402,13 @@ header {
 
     #header-top_mobile {
         display:none;
-        @media screen and (max-width:$screen-md) {
+        @include respond(tab-port) {
             display:block;
         }
     }
     #head-mobile {
         display:none;
-        @media screen and (max-width:$screen-md) {
+        @include respond(tab-port) {
             display:block;
         }
     }
@@ -397,7 +432,7 @@ header {
             background-repeat: no-repeat;
             background-size: contain;
             filter: invert(1);
-            @media screen and (max-width: $screen-md) {
+            @include respond(tab-port) {
                 left: 5px;
                 top: calc(50% - 10px);
             }
@@ -413,8 +448,8 @@ header {
             padding: 6px;
             font-size: 16px;
             border: 0;
-            font-family: $serif;
-            @media screen and (max-width:$screen-md) {
+            font-family: $cantata;
+            @include respond(tab-port) {
                 width:100%;
             }
         }
@@ -461,7 +496,7 @@ header {
             z-index: 9;
             transition: all .3s ease-in-out;
             border-radius: 10px 0 0 10px;
-            @media screen and (max-width:$screen-md) {
+            @include respond(tab-port) {
                 width:100%;
                 left:0;
                 right: auto;
@@ -471,7 +506,7 @@ header {
             }
             &.hdn {
                 width: 0;
-                @media screen and (max-width:$screen-md) {
+                @include respond(tab-port) {
                     width:100%;
                 }
                 & ~ .btn-search {
@@ -484,7 +519,7 @@ header {
                             color: $grey;
                         }
                     }
-                    @media screen and (max-width:$screen-md) {
+                    @include respond(tab-port) {
                         width:auto;
                         height: 35px;
                         background: $white;
@@ -513,11 +548,11 @@ header {
                 display: flex;
                 padding: 5px;
                 height:30px;
-                @media screen and (max-width:$screen-md) {
+                @include respond(tab-port) {
                     width:100%;
                 }
                 .form-group {
-                    @media screen and (max-width:$screen-md) {
+                    @include respond(tab-port) {
                         width:100%;
                     }
                 }
@@ -528,7 +563,7 @@ header {
                     padding: 4px 8px 0;
                     border-radius: 5px 0 0 5px;
                     height: 32px;
-                    @media screen and (max-width:$screen-md) {
+                    @include respond(tab-port) {
                         display:none;
                     }
                     span {

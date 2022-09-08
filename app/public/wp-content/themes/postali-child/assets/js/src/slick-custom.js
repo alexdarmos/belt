@@ -27,17 +27,9 @@ jQuery( function ( $ ) {
 	// });
 
 	$('#awards-slider').slick({
-		dots: false,
-		infinite: true,
-		autoplay: true,
-  		autoplaySpeed: 5000,
-  		speed: 1300,
 		slidesToShow: 3,
+		centerMode: true,
 		slidesToScroll: 1,
-		prevArrow: false,
-    	nextArrow: false,
-    	swipeToSlide: false,
-		cssEase: 'ease-in-out'
 	});
 
 	$('.results-container').slick({
@@ -51,7 +43,8 @@ jQuery( function ( $ ) {
 		prevArrow: false,
     	nextArrow: false,
     	swipeToSlide: false,
-		cssEase: 'ease-in-out'
+		cssEase: 'ease-in-out',
+		nextArrow: $('.results-next-btn'),
 	});
 	
 });

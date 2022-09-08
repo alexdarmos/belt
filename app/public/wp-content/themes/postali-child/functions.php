@@ -36,8 +36,11 @@
 		wp_enqueue_style( 'styles', get_stylesheet_directory_uri() . '/assets/css/styles.css'); // Enqueue child theme styles.css
 		wp_enqueue_style( 'slick-css', get_stylesheet_directory_uri() . '/assets/css/slick.css'); // Enqueue child theme styles.css
 		
-		wp_register_style( 'google-fonts', '', array() );
-		wp_enqueue_style('google-fonts');
+		wp_register_style( 'google-fonts-lato', 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap', array(), time() );
+		wp_enqueue_style('google-fonts-lato');
+
+		wp_register_style( 'google-fonts-cantata', 'https://fonts.googleapis.com/css2?family=Cantata+One&display=swap', array(), time() );
+		wp_enqueue_style('google-fonts-cantata');
 
 		// Compiled .js using Grunt.js
 		wp_register_script('custom-scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.min.js',array('jquery'), null, true); 
@@ -263,7 +266,23 @@
 		}
 		return $items;
 	}
-	add_filter('wp_nav_menu_items', 'mainmenu_navsearch', 10, 2);
+	//add_filter('wp_nav_menu_items', 'mainmenu_navsearch', 10, 2);
+
+		// Add copyright to footer menu
+		function footermenu_copyright($items, $args) {
+			if ($args->theme_location == 'footer-nav') {
+				ob_start();
+				?>
+				<p class="copyright-year">Copyright &copy; <?php echo date('Y'); ?> Belt, Bruner & Barnett PC. All rights reserved.</p>
+	
+				<?php
+				$new_items = ob_get_clean();
+	
+				$items .= $new_items;
+			}
+			return $items;
+		}
+		add_filter('wp_nav_menu_items', 'footermenu_copyright', 10, 2);
 
 	// Add template column to page list in wp-admin
 	function page_column_views( $defaults ) {

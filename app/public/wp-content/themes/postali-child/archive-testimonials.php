@@ -25,6 +25,9 @@ $pagination = paginate_links( array(
 
 <section id="hero">
     <div class="container">
+        <?php if ( function_exists('yoast_breadcrumb') ) : ?>
+            <?php yoast_breadcrumb('<p id="breadcrumbs">','</p>');  ?>
+        <?php endif; ?>
         <div class="columns">
             <div class="column-full center">
                 <h1>Testimonials</h1>
@@ -46,12 +49,12 @@ $pagination = paginate_links( array(
                     ?>
 
                     <div class="review-row">
-                        <div class="right-block">
+                        <div class="left-block">
                             <a href="<?php the_field('video_link', $id); ?>">
                                 <img src="<?php esc_html_e($thumbnail['url']) ?>" alt="<?php esc_html_e($thumbnail['alt']) ?>" title="<?php esc_html_e($thumbnail['title']) ?>"/>
                             </a>
                         </div>
-                        <div class='left-block'>
+                        <div class='right-block'>
                             <div class="author-row">
                                 <p class="author"><?php the_field('name_of_author', $id) ?></p>
                                 <span><span class="star-rating">★ ★ ★ ★ ★</span> <span><?php esc_html_e($client_pa); ?></span> </span>

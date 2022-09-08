@@ -6,7 +6,75 @@
 **/
 
 footer {
-    #copyright {
+    .grid {
         background: $lt-grey;
+        @include respond(tab-land) {
+            grid-template-columns: 1fr
+        }
+        .wrapper {
+            width: 80%;
+            margin: 0 auto;
+            .cta-wrapper {
+                margin: 40px 0;
+            }
+            .primary-location {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: center;
+                margin-bottom: 20px;
+                .address-wrapper {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    .address {
+                        max-width: 260px;
+                        margin-bottom: 20px;
+                    }
+                }
+                iframe {
+                    height: 89px;
+                    width: 260px;
+                    margin-bottom: 20px;
+                }
+            }
+            .privacy-policy {
+                font-size: 12px;
+                line-height: 25px;
+            }
+            
+            #menu-footer-menu {
+                list-style-type: none;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin: 20px 0 0 0;
+                li {
+                    margin: 0 8px 0 0 !important;
+                    padding-right: 8px;
+                    &:after {
+                        content: "|";
+                        position: relative;
+                        left: 8px;
+                    }
+                    a {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .banner-img {
+            min-width: auto;
+            height: 80%;
+            align-self: flex-end;
+            @include respond(tab-land) {
+                margin-top: 45px;
+                align-self: flex-start;
+                height: 100%;
+            }
+        }
     }
+    
+    
 }

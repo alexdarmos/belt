@@ -7,48 +7,104 @@
 
 /* Fonts */
 body, h1, h2, h3, h4, h5, h6, p, a, ul {
-    // color: $body-text-color;
+    line-height: 35px;
+    color: $blk;
 } 
-p, a, ul, ol {
 
+h1 {
+    font-family: $cantata;
+    font-size: 80px;
 }
+
+h2 {
+    font-family: $cantata;
+    font-size: 55px;
+    line-height: normal;
+    font-weight: $normal;
+}
+
+p, a, ul, ol, li, span {
+    font-family: $lato;
+    font-size: 16px;
+    color: $blk;
+}
+
 ul li, ol li {
     margin: 0 0 0 20px;
     font-size: 18px;
 }
+
+p, li {
+    margin-bottom: 15px !important;
+}
+
 dl, blockquote, img {
 
 }
 
 a {
-    text-decoration:none;
+    text-decoration: underline;
     -webkit-transition:$trans;
     transition:$trans;
     &:hover {
-        // color:$lt-red;
-        text-decoration:none;
+        
     }
 }
 
 .btn {
     display:inline-block;
-    padding:15px 40px;
-    // background-color:$lt-red;
+    padding:12px 40px;
+    background: $gold-gradient;
     text-decoration:none;
-    // color:$white;
-    // border:2px solid $lt-red;
+    color:$blk;
     transition:$trans;
+    font-size: 16px;
+    font-weight: $bold;
+    font-family: $lato;
+    text-transform: capitalize;
+    line-height: normal;
     &:hover {
         // background-color:$dk-red;
     }
 }
 
-p {
-    font-size:22px;
-    line-height: 36px;
-    margin-bottom:30px;
+.wide-text {
+    text-transform: uppercase;
+    letter-spacing: 4.8px;
+    font-weight: $bold;
 }
 
-.wide-text {
-	
+.star-rating {
+    color: $yellow;
+    margin: 0 10px;
+}
+
+.vertical-text {
+	transform: rotate(-90deg);
+	height: 40px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-weight: $bold;
+    font-size: 18px;
+    border-bottom: solid 5px $lt-grey;
+}
+
+.small-sub-title {
+    color: $green;
+    font-size: 15px;
+    font-style: italic;
+    position: relative;
+    padding-left: 25px;
+    display: inline-flex;
+    align-items: center;
+    &:before {
+        content: "";
+        background: url('/wp-content/uploads/2022/08/icon-single-B-logo.svg') no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+        left: 0;
+        width: 18px;
+        height: 18px;
+    }
 }

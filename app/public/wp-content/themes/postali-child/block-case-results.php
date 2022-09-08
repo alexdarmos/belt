@@ -14,10 +14,10 @@ $results_group = get_field('case_results_block', 'options');
                 $amount = get_field('amount', $id)
                 ?>
                 <div class="result">
-                    <p class="amount"><?php echo money_format("%.0n", $amount); ; ?></p>
+                    <?php if($amount) : ?><p class="amount"><?php echo money_format("%.0n", $amount); ; ?></p><?php endif; ?>
                     <p class="title"><?php the_field('title', $id); ?></p>
                     <div class="spacer-30"></div>
-                    <a class="results-next-btn" href="#">Next Case</a>
+                    <a class="results-next-btn" href="#/">Next Case</a>
                     <a href="/case-results/" class="btn">See All Case Results</a>
                 </div>
                 <?php endforeach; ?>

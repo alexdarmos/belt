@@ -22,19 +22,17 @@ function build_reivews($id, $count) {
     $thumbnail_title = $thumbnail['title'];
     
     $review_block = "
-    <div class='review-row{$is_reverse}'>
-        <div class='left-block'>
-            {$testimonial}
-            <div class='author-row'>
-                <p class='author'>${author}</p>
-                <img src='/wp-content/uploads/2022/08/google-reviews-logo-white.png' alt='google review logo' title='google review logo'/>
-            </div>
+    <div class='left-block block_{$count}'>
+        <p>{$testimonial}</p>
+        <div class='author-row'>
+            <p class='author'>${author}</p>
+            <img src='/wp-content/uploads/2022/08/google-reviews-logo-white.png' alt='google review logo' title='google review logo'/>
         </div>
-        <div class='right-block'>
-            <a href='{$video_link}'>
-                <img src='{$thumbnail_url}' alt='{$thumbnail_alt}' title='{$thumbnail_title}'/>
-            </a>
-        </div>
+    </div>
+    <div class='right-block block_{$count}'>
+        <a href='{$video_link}'>
+            <img src='{$thumbnail_url}' alt='{$thumbnail_alt}' title='{$thumbnail_title}'/>
+        </a>
     </div>";
     return $review_block;
 } ?>

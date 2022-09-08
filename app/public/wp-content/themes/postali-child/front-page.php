@@ -32,7 +32,7 @@ $pa_query = new WP_Query( $pa_args );
 
 <div id="front-page">
 
-    <section id="landing-hero">
+    <section id="hero">
         <div class="columns">
             <div class="column-40">
                 <p class="banner-text"><?php the_field('hero_sub_title') ?></p>
@@ -44,12 +44,14 @@ $pa_query = new WP_Query( $pa_args );
                         <a href="<?php esc_html_e($contact_link['link']); ?>"><?php esc_html_e($contact_link['title']); ?></a>
                     </div>
                 </div>
+                <span class="intro-video intro-video_desktop"> <span class="play-btn"></span> <a class="lightbox" href="<?php the_field('hero_video_link'); ?>">Watch our Intro to the Firm video</a> </span>
             </div>
             <div class="column-60">
                 <div class="settlement-badge" style="background-image: url('<?php esc_html_e($settlement_badge['url']); ?>');">
                     <p class="settlement-number"><?php esc_html_e($number_verdicts); ?></p>
                 </div>
                 <img class="banner-img" src="<?php esc_html_e($banner_img['url']); ?>" title="<?php esc_html_e($banner_img['title']); ?>" alt="<?php esc_html_e($banner_img['alt']); ?>" />
+                <span class="intro-video intro-video_mobile"> <span class="play-btn"></span> <a class="lightbox" href="<?php the_field('hero_video_link'); ?>">Watch our Intro to the Firm video</a> </span>
             </div>
         </div>
     </section>
@@ -57,12 +59,14 @@ $pa_query = new WP_Query( $pa_args );
     <section id="panel-1">
         <div class="container">
             <div class="columns">
-                <div class="column-66 center">
-                    <div class="columns">
+                <div class="column-80 center">
+                    <div class="columns bottom-align">
                         <div class="column-50">
-                            <p class="small-sub-title">
+                            <?php if( get_field('p1_sub_title') ) : ?>
+                                <p class="small-sub-title">
                                 <?php the_field('p1_sub_title'); ?>
                             </p>
+                            <?php endif; ?>
                             <h2><?php the_field('p1_title'); ?></h2>
                         </div>
                         <div class="column-50">
@@ -92,14 +96,16 @@ $pa_query = new WP_Query( $pa_args );
             <div class="columns">
                 <div class="column-full">
                     <div>
-                        <p class="small-sub-title"><?php the_field('p4_title') ?></p>
-                        <h2><?php the_field('p4_sub_title'); ?></h2>
+                        <?php if( get_field('p4_sub_title') ) : ?>
+                            <p class="small-sub-title"><?php the_field('p4_sub_title') ?></p>
+                        <?php endif; ?>
+                        <h2><?php the_field('p4_title'); ?></h2>
                             <?php if( $pa_query->have_posts() ) : ?>
                                 <div class="pa-contianer"> 
                                 <?php while( $pa_query->have_posts() ) : $pa_query->the_post(); $id =  get_the_ID();
                                 $banner = get_field('hero_banner_image', $id); ?>
                                     <div class="practice-area">
-                                        <p class="title"><?php the_field('pa_short_title', $id); ?></p>
+                                        <p class="title wide-text"><?php the_field('pa_short_title', $id); ?></p>
                                         <p class="excerpt"><?php the_field('pa_excerpt', $id); ?></p>
                                         <div class="spacer-15"></div>
                                         <a class="btn flow" href="<?php esc_html_e( get_permalink($id) ); ?>">More on <?php the_field('pa_short_title', $id); ?></a>
@@ -119,7 +125,9 @@ $pa_query = new WP_Query( $pa_args );
             <div class="columns">
                 <div class="column-33">
                     <div>
-                        <p class="small-sub-title"><?php the_field('p5_sub_title'); ?></p>
+                        <?php if( get_field('p5_sub_title') ) : ?>
+                            <p class="small-sub-title"><?php the_field('p5_sub_title'); ?></p>
+                        <?php endif; ?>
                         <h2><?php the_field('p5_title'); ?></h2>
                         <div class="spacer-30"></div>
                         <p><?php the_field('p5_copy'); ?></p>
@@ -137,7 +145,9 @@ $pa_query = new WP_Query( $pa_args );
             <div class="columns">
                 <div class="column-full">
                     <div>
-                        <p class="small-sub-title"><?php the_field('p6_sub_title'); ?></p>
+                        <?php if( get_field('p6_sub_title') ) : ?>
+                            <p class="small-sub-title"><?php the_field('p6_sub_title'); ?></p>
+                        <?php endif; ?>
                         <h2><?php the_field('p6_title'); ?></h2>
                         <div class="spacer-60"></div>
                         <?php get_template_part('block', 'accordion', ['data' => get_field('p6_faq_block')]); ?>
@@ -152,7 +162,9 @@ $pa_query = new WP_Query( $pa_args );
             <div class="columns">
                 <div class="column-66">
                     <div>
-                        <p class="small-sub-title"><?php the_field('p7_sub_title'); ?></p>
+                        <?php if( get_field('p7_sub_title') ) : ?>
+                            <p class="small-sub-title"><?php the_field('p7_sub_title'); ?></p>
+                        <?php endif; ?>
                         <h2><?php the_field('p7_title'); ?></h2>
                         <div class="spacer-45"></div>
                             <?php the_field('p7_intro_copy'); ?>

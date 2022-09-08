@@ -27,6 +27,9 @@ $pagination = paginate_links( array(
 
 <section id="hero">
     <div class="container">
+        <?php if ( function_exists('yoast_breadcrumb') ) : ?>
+            <?php yoast_breadcrumb('<p id="breadcrumbs">','</p>');  ?>
+        <?php endif; ?>
         <div class="columns">
             <div class="column-full center">
                 <h1>Results</h1>
